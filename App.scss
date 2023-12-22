@@ -1,0 +1,8 @@
+@import "./styles/colors";
+
+.container {
+  flex: 1;
+  background-color: $secondary;
+  align-items: center;
+  justify-content: center;
+}

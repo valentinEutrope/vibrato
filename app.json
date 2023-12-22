@@ -2,10 +2,14 @@
   "expo": {
     "name": "vibrato",
     "slug": "vibrato",
-    "version": "1.0.0",
+    "version": "0.1.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",
+    "packagerOpts": {
+      "config": "metro.config.js",
+      "sourceExts": ["js", "jsx", "scss", "sass"]
+    },
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
