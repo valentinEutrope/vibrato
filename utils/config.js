@@ -2,61 +2,61 @@ export default {
   guitarStrings: [
     // {
     //   note: "B",
-    //   freq: "62Hz",
+    //   freq: "62",
     // },
     // {
     //   note: "D",
-    //   freq: "73Hz",
+    //   freq: "73",
     // },
     {
       note: "E",
-      freq: "82Hz",
+      freq: "82",
     },
     {
       note: "A",
-      freq: "110Hz",
+      freq: "110",
     },
     {
       note: "D",
-      freq: "147Hz",
+      freq: "147",
     },
     {
       note: "G",
-      freq: "196Hz",
+      freq: "196",
     },
     {
       note: "B",
-      freq: "247Hz",
+      freq: "247",
     },
     {
       note: "e",
-      freq: "330Hz",
+      freq: "330",
     },
   ],
   bassStrings: [
     {
       note: "B",
-      freq: "31Hz",
+      freq: "31",
     },
     {
       note: "E",
-      freq: "41Hz",
+      freq: "41",
     },
     {
       note: "A",
-      freq: "55Hz",
+      freq: "55",
     },
     {
       note: "D",
-      freq: "73Hz",
+      freq: "73",
     },
     {
       note: "G",
-      freq: "98Hz",
+      freq: "98",
     },
     {
       note: "C",
-      freq: "131Hz",
+      freq: "131",
     },
   ],
 };

@@ -1,9 +1,9 @@
-import { useCallback } from "react";
+import { useCallback, useMemo, useState } from "react";
 import { View, Text } from "react-native";
-import Swiper from "react-native-swiper";
 import TunerNote from "./TunerNote";
-import config from "utils/config";
 import styles from "./Tuner.scss";
+import config from "utils/config";
+import TunerFreq from "./TunerFreq";
 
 const forgeGuitarStrings = () => {
   const strings = config.guitarStrings;
@@ -20,8 +20,12 @@ const forgeGuitarStrings = () => {
 };
 
 const Tuner = () => {
-  //   const [guitarStrings, setGuitarStrings] = useState(forgeGuitarStrings());
-  const guitarStrings = forgeGuitarStrings();
+  const guitarStrings = useMemo(() => {
+    return forgeGuitarStrings();
+  }, []);
+
+  const [currentString, setCurrentString] = useState(guitarStrings[0]);
+  const [currentFreq, setCurrentFreq] = useState(0);
 
   const handleSwipe = useCallback(() => {
     console.log("swipe");
@@ -29,22 +33,8 @@ const Tuner = () => {
 
   return (
     <View style={styles.tuner}>
-      <Text>wazzaaaa</Text>
-      <Swiper
-        style={styles.tunerSwipper}
-        showsButtons={true}
-        loop={false}
-        onIndexChanged={() => handleSwipe()}
-      >
-        {guitarStrings.map((string) => (
-          <View
-            key={`string-${string.note}-${string.freq}`}
-            style={styles.tunerSwipperItem}
-          >
-            <TunerNote note={string.note} />
-          </View>
-        ))}
-      </Swiper>
+      <TunerNote note={currentString.note} />
+      <TunerFreq freq={currentString.freq} currentFreq={currentFreq} />
     </View>
   );
 };
